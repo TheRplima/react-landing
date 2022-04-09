@@ -1,5 +1,5 @@
 // import "./Style.scss";
-import useImage from '../../hooks/useImage';
+// import useImage from '../../hooks/useImage';
 import { Button } from "../Button/Index";
 import { Title } from "../Title/Index";
 
@@ -20,8 +20,7 @@ export type HeroProps = {
 };
 
 export function Hero({ ...props }: HeroProps) {
-  const imageSrc = typeof(props.image) !== "boolean" && typeof(props.image.src) !== 'undefined' ? props.image.src : '';
-  const { image } = useImage(imageSrc);
+  const imageSrc = typeof(props.image) !== "boolean" && typeof(props.image.src) !== 'undefined' ? require(`../../assets/${props.image.src}`) : '';
   const imageAlt = typeof(props.image) !== "boolean" && typeof(props.image.alt) !== 'undefined' ? props.image.alt : '';
   const hasText = typeof(props.text) !== "boolean" ? true : false;
   const title = typeof(props.text) !== "boolean" && typeof(props.text.title) !== "boolean" ? props.text.title : false;
@@ -32,23 +31,19 @@ export function Hero({ ...props }: HeroProps) {
   return (
     <> 
       {imageSrc && (
-          <div className="image">
-            {image !== null && (
-            <img src={image} alt={imageAlt} />
-            )}
-          </div>
+        <div className="image">
+          <img src={imageSrc} alt={imageAlt} />
+        </div>
       )}
       {hasText && (
-          <div className="text">
-            {title && (
-              <Title size={2}>{title}</Title>
-            )}
-            {paragraphs && (paragraphs.map((paragraph, index) => {
-              return (<p key={index}>{paragraph}</p>);
-            }))}
-            {hasButton && (
-              <Button onClick={() => {window.location.href = buttonOnclick;}}>{buttonLabel}</Button>
-            )}
+        <div className="text">
+          {title && (
+            <Title size={2}>{title}</Title>
+          )}
+          {paragraphs && (paragraphs.map((paragraph, index) => (<p key={index}>{paragraph}</p>)))}
+          {hasButton && (
+            <Button onClick={() => {window.location.href = buttonOnclick;}}>{buttonLabel}</Button>
+          )}
         </div>
       )}
     </>

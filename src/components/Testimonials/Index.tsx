@@ -1,6 +1,5 @@
 // import Swiper core and required modules
 import { Mousewheel, Navigation, Pagination, A11y } from 'swiper';
-
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
@@ -22,10 +21,10 @@ export type TestimonialsProps = {
   model: string;
   title: string | boolean;
   subtitle: string | boolean;
-  testimonials: TestimonialCardProps[] | boolean ;
+  testimonials: TestimonialCardProps[] ;
 };
 
-export function Testimonials({ model, title, subtitle, testimonials }: TestimonialsProps) {
+export function Testimonials({ model, title, subtitle, testimonials }: TestimonialsProps) { 
   return (
     <> 
       <header>
@@ -60,27 +59,29 @@ export function Testimonials({ model, title, subtitle, testimonials }: Testimoni
             }
           }}
         >
-          {testimonials.map((testimonial:TestimonialCardProps, index) => (
-            <SwiperSlide key={index}>
-              <blockquote>
-                {typeof(testimonial.text) !== "boolean" && (
-                  <p>
-                    <span>&ldquo;</span>
-                    {testimonial.text}
-                  </p>
-                )}
-                {typeof(testimonial.name) !== "boolean" && typeof(testimonial.avatar) !== "boolean" && (
-                  <cite>
-                      <img
-                      src={testimonial.avatar}
-                      alt={`Foto de ${testimonial.name}`}
-                      />
-                      {testimonial.name}
-                  </cite>
-                )}
-              </blockquote>
-            </SwiperSlide>
-          ))}
+          {testimonials.map((testimonial:TestimonialCardProps, idx) => {
+            const avatar = require(`../../assets/${testimonial.avatar}`);
+            return (
+              <SwiperSlide key={idx}>
+                <blockquote>
+                  {typeof(testimonial.text) !== "boolean" && (
+                    <p>
+                      <span>&ldquo;</span>
+                      {testimonial.text}
+                    </p>
+                  )}
+                  {typeof(testimonial.name) !== "boolean" && typeof(testimonial.avatar) !== "boolean" && (
+                    <cite>
+                        <img
+                        src={avatar}
+                        alt={`Foto de ${testimonial.name}`}
+                        />
+                        {testimonial.name}
+                    </cite>
+                  )}
+                </blockquote>
+              </SwiperSlide>
+          )})}
         </Swiper>
       )}      
     </>
