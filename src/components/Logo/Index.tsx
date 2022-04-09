@@ -1,4 +1,5 @@
 import parse from "html-react-parser";
+import useImage from '../../hooks/useImage';
 
 // import "./Style.scss";
 
@@ -11,12 +12,15 @@ export type LogoProps = {
 };
 
 export function Logo({ type, className, title, href, src }: LogoProps) {
+  const { image } = useImage(src ? src : '');
   return (
     <a className={className} href={href}>
       {type === "text" ? (
         parse(title)
       ) : (
-        <img src={src} alt={title} />
+        image !== null && (
+          <img src={image} alt={title} />
+        )    
       )}
     </a>
   );

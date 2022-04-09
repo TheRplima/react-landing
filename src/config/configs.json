@@ -1,0 +1,169 @@
+{
+  "header": {
+    "logo": {
+      "type": "text",
+      "className": "logo",
+      "title": "rodrigo<span>lima</span>.io",
+      "href": "/"
+    },
+    "menuItems": [
+      {
+        "title": "Home",
+        "href": "#home"
+      },
+      {
+        "title": "About",
+        "href": "#about"
+      },
+      {
+        "title": "Testimonials",
+        "href": "#testimonials"
+      },
+      {
+        "title": "Contact me",
+        "href": "#contact"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "home",
+      "title": "Home",
+      "grid": true,
+      "nav": "#home",
+      "content": {
+        "model": "Hero",
+        "image": {
+          "src": "images/home.jpg",
+          "alt": "Computer screen with some weird code"
+        },
+        "text": {
+          "title": "Hi, Im Rodrigo Lima",
+          "paragraphs": [
+            "I help designers, small agencies and businesses bring their ideas to life. Powered by Figma, VS Code and coffee, I turn your requirements into CMS-ified and ecommerce-ified websites - on time and on budget.",
+            "Got any questions?"
+          ],
+          "button": {
+            "label": "Contact me.",
+            "onclick": "https://api.whatsapp.com/send?phone=+5535998094996&text="
+          }
+        }
+      }
+    },
+    {
+      "id": "about",
+      "title": "About",
+      "grid": true,
+      "nav": "#about",
+      "content": {
+        "model": "Hero",
+        "image": {
+          "src": "images/about.jpg",
+          "alt": "Personal trainer auxiliando senhor no treinamento"
+        },
+        "text": {
+          "title": "Me, Myself and I",
+          "paragraphs": [
+            "Since Adobe Flash was a complete innovation, alongside with CSS 1.0 and HTML 4.01 as standards of the current web I've been passionate about web.",
+            "For over a decade I had many opportunities to work in a vast spectrum of web technologies what let me gather a significant amount of various experience. Working for companies and individuals around the globe I met and learnt from amazing and ambitious people.",
+            "I currently work remotely with a selected freelance client base being open for new opportunities."
+          ],
+          "button": false
+        }
+      }
+    },
+    {
+      "id": "testimonials",
+      "title": "Testimonials",
+      "grid": false,
+      "nav": "#testimonials",
+      "content": {
+        "model": "Testimonials",
+        "title": "Testimonials",
+        "subtitle": "People I've worked with have said some nice things...",
+        "testimonials": [
+          {
+            "avatar": "fotos/10.jpegg",
+            "name": "David Janssens",
+            "text": "Rodrigo has consistently contributed well-written and clean code to the ImpressCMS project. He also has a very extensive knowledge of the system, and helped us fixed a great number of bugs."
+          },
+          {
+            "avatar": "fotos/56.jpeg",
+            "name": "Vaughan Montgomery",
+            "text": "I have had the pleasure of working alongside Rodrigo on a number of projects. I have always found him to be very knowledgeable and resourceful. He is always improving his skills and is always willing to learn. He has the ability to be a good mentor & is an invaluable member of our development team. I would not hesitate to recommend him to anyone."
+          },
+          {
+            "avatar": "fotos/26.jpeg",
+            "name": "Niels Drost",
+            "text": "Rodrigo is an excellent worker. At times I even saw Rodrigo make brilliant solutions that I didn't even think of being possible. At our project we've even managed to transfer a part of the page generation and our other modules to our internal FrameWork with the help of Rodrigo. I'd recommend Rodrigo without a doubt."
+          },
+          {
+            "avatar": "fotos/10.jpegg",
+            "name": "David Janssens",
+            "text": "Rodrigo has consistently contributed well-written and clean code to the ImpressCMS project. He also has a very extensive knowledge of the system, and helped us fixed a great number of bugs."
+          },
+          {
+            "avatar": "fotos/56.jpeg",
+            "name": "Vaughan Montgomery",
+            "text": "I have had the pleasure of working alongside Rodrigo on a number of projects. I have always found him to be very knowledgeable and resourceful. He is always improving his skills and is always willing to learn. He has the ability to be a good mentor & is an invaluable member of our development team. I would not hesitate to recommend him to anyone."
+          },
+          {
+            "avatar": "fotos/26.jpeg",
+            "name": "Niels Drost",
+            "text": "Rodrigo is an excellent worker. At times I even saw Rodrigo make brilliant solutions that I didn't even think of being possible. At our project we've even managed to transfer a part of the page generation and our other modules to our internal FrameWork with the help of Rodrigo. I'd recommend Rodrigo without a doubt."
+          }
+        ]
+      }
+    },
+    {
+      "id": "contact",
+      "title": "Contact me",
+      "grid": true,
+      "nav": "#contact",
+      "content": {
+        "model": "Contact",
+        "text": {
+          "title": "Contact me",
+          "paragraphs": [
+            "I'm interested in freelance opportunities – especially ambitious or large projects. However, if you have other request or question, don't hesitate to get in touch."
+          ],
+          "button": {
+            "label": "Contact",
+            "onclick": "https://api.whatsapp.com/send?phone=+5535998094996&text="
+          }
+        },
+        "info": {
+          "phone": "35 99809-4996",
+          "address": "R. Afonso Pena, 241 - Monte Santo de Minas",
+          "email": "therplima@gmail.com"
+        }
+      }
+    }
+  ],
+  "footer": {
+    "brand": {
+      "logo": {
+        "type": "text",
+        "className": "logo logo-alt",
+        "title": "rodrigo<span>lima</span>.io",
+        "href": "/"
+      },
+      "copyTo": "©2022 rodrigolima.io",
+      "copy": "All rights reserved."
+    },
+    "social": [
+      {
+        "icon": "github",
+        "href": "https://github.com/TheRplima"
+      },
+      {
+        "icon": "linkedin",
+        "href": "https://www.linkedin.com/in/therplima"
+      },
+      {
+        "icon": "twitter",
+        "href": "https://twitter.com/rod_lima2505"
+      }
+    ]
+  }
+}

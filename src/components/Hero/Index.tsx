@@ -1,5 +1,5 @@
 // import "./Style.scss";
-
+import useImage from '../../hooks/useImage';
 import { Button } from "../Button/Index";
 import { Title } from "../Title/Index";
 
@@ -20,7 +20,8 @@ export type HeroProps = {
 };
 
 export function Hero({ ...props }: HeroProps) {
-  const imageSrc = typeof(props.image) !== "boolean" && typeof(props.image.src) !== 'undefined' ? props.image.src : false;
+  const imageSrc = typeof(props.image) !== "boolean" && typeof(props.image.src) !== 'undefined' ? props.image.src : '';
+  const { image } = useImage(imageSrc);
   const imageAlt = typeof(props.image) !== "boolean" && typeof(props.image.alt) !== 'undefined' ? props.image.alt : '';
   const hasText = typeof(props.text) !== "boolean" ? true : false;
   const title = typeof(props.text) !== "boolean" && typeof(props.text.title) !== "boolean" ? props.text.title : false;
@@ -32,7 +33,9 @@ export function Hero({ ...props }: HeroProps) {
     <> 
       {imageSrc && (
           <div className="image">
-            <img src={imageSrc} alt={imageAlt} />
+            {image !== null && (
+            <img src={image} alt={imageAlt} />
+            )}
           </div>
       )}
       {hasText && (

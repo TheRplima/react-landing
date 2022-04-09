@@ -1,12 +1,16 @@
-import { Header } from "./components/Header/Index";
-import { Section } from "./components/Section/Index";
-import { Footer } from "./components/Footer/Index";
-
-import { sections, header, footer } from "./config/configs";
-
 import { Fade } from "react-awesome-reveal";
 
-function App() { 
+import { Header, HeaderProps } from "./components/Header/Index";
+import { Section, SectionProps } from "./components/Section/Index";
+import { Footer, FooterProps } from "./components/Footer/Index";
+
+import configs from "./config/configs.json";
+
+const header:HeaderProps = configs.header;
+const sections:SectionProps[] = configs.sections;
+const footer:FooterProps = configs.footer;
+
+function App() {  
   return (
     <>
       <Header {...header} />
