@@ -3,7 +3,7 @@ import { SectionProps } from "../components/Section/Index";
 import { FooterProps } from "../components/Footer/Index";
 
 import { HeroProps } from "../components/Hero/Index";
-import { ServicesProps } from "../components/Services/Index";
+// import { ServicesProps } from "../components/Services/Index";
 import { TestimonialsProps } from "../components/Testimonials/Index";
 import { ContactProps } from "../components/Contact/Index";
 
