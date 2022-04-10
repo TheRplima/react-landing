@@ -20,7 +20,7 @@ export function Header({ logo, menuItems }: HeaderProps) {
     <header id="header">
       <nav className={`container ${navbarOpen ? " show" : ""}`}>
         <Logo {...logo} />
-        <Menu items={menuItems} handleToggle={handleToggle} />
+        <Menu items={menuItems} handleToggle={handleToggle} navbarOpen={navbarOpen} />
         <div className="toggle icon-menu"><Icon icon="menu" onClick={handleToggle} size={"1.5rem"} /></div>
         <div className="toggle icon-close"><Icon icon="close" onClick={handleToggle} size={"1.5rem"} /></div>
       </nav>

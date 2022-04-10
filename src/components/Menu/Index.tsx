@@ -8,6 +8,7 @@ export type MenuItemProps = {
 type MenuProps = {
   items: MenuItemProps[];
   handleToggle?: VoidFunction;
+  navbarOpen?: boolean;
 };
 
 type sectionPositionType = {
@@ -16,7 +17,13 @@ type sectionPositionType = {
   endPostion: number;
 }
 
-export function Menu({ items, handleToggle }: MenuProps) {
+type linkPropsType = {
+  className: string;
+  href: string;
+  onClick?: VoidFunction;
+}
+
+export function Menu({ items, handleToggle, navbarOpen }: MenuProps) {
   const [ scrolled, setScrolled ] = useState('');
 
   useEffect( () => {
@@ -43,15 +50,23 @@ export function Menu({ items, handleToggle }: MenuProps) {
     return () => {
       window.removeEventListener('scroll', handleScroll)
     }
-  }, [items])
+  }, [items]);
+
   return (
     <>
       <div className="menu">
         <ul className="grid">
           {items.map((item, index) => {
+            const linkProps:linkPropsType = {
+              className:(scrolled === '' && item.href === '#home') || (scrolled === item.href) ? "title active" : "title",
+              href:item.href,
+            }
+            if (navbarOpen){
+              linkProps.onClick = handleToggle;  
+            }
             return (
               <li key={index}>
-                <a className={(scrolled === '' && item.href === '#home') || (scrolled === item.href) ? "title active" : "title"} href={item.href} onClick={handleToggle}>
+                <a {...linkProps}>
                   {item.title}
                 </a>
               </li>
