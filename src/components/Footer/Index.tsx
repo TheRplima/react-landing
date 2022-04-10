@@ -15,7 +15,7 @@ export type FooterProps = {
 export function Footer({ brand, social }: FooterProps) {
   const logo = brand.logo;
     return (
-    <footer className="section">
+    <footer className="section" id="#footer">
       <div className="container grid">
         <div className="brand">
           <Logo {...logo} />

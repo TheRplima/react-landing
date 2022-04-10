@@ -9,21 +9,29 @@ type MenuProps = {
   items: MenuItemProps[];
 };
 
+type sectionPositionType = {
+  id: string;
+  startPostion: number;
+  endPostion: number;
+}
+
 export function Menu({ items }: MenuProps) {
   const [ scrolled, setScrolled ] = useState('');
+
   useEffect( () => {
-    const sections = items.map(({href}) => href );
-    const sectionsOffsetTop:{pos:number,id:string}[] = sections.map((section) => {
-      const sectionPosition = document.getElementById(section.substring(1))?.offsetTop;
+    const sectionsOffsetTop:sectionPositionType[] = items.map(({href}) => href ).map((section) => {
+      const sectionElement = document.getElementById(section.substring(1));
+      const startPostion = sectionElement ? sectionElement.offsetTop - 100 : 0 ;
       return {
-        pos: sectionPosition ? sectionPosition : 0,
-        id: section
+        id: section,
+        startPostion: startPostion > 0 ? startPostion : 0,
+        endPostion: sectionElement ? (startPostion + sectionElement.offsetHeight) : 0,
       } 
     });
 
     const handleScroll = () => { 
       let activeSection = sectionsOffsetTop.filter((section) => {
-        if (section.pos >= window.pageYOffset - 120 && section.pos <= window.pageYOffset + 120){
+        if (section.startPostion < window.pageYOffset && window.pageYOffset < section.endPostion){
           return true;
         }
         return false;
@@ -42,7 +50,7 @@ export function Menu({ items }: MenuProps) {
           {items.map((item, index) => {
             return (
               <li key={index}>
-                <a className={(scrolled === '' && item.href === '#home')?"title active":(scrolled === item.href) ? "title active" : "title"} href={item.href}>
+                <a className={(scrolled === '' && item.href === '#home') || (scrolled === item.href) ? "title active" : "title"} href={item.href}>
                   {item.title}
                 </a>
               </li>
