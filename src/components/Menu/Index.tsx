@@ -28,13 +28,13 @@ export function Menu({ items }: MenuProps) {
         }
         return false;
       });
-      setScrolled(activeSection[0].id);
+      setScrolled(activeSection[0]?activeSection[0].id:'#home');
     }
     window.addEventListener('scroll', handleScroll)
     return () => {
       window.removeEventListener('scroll', handleScroll)
     }
-  }, [])
+  }, [items])
   return (
     <>
       <div className="menu">
