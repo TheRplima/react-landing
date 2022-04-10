@@ -7,6 +7,7 @@ export type MenuItemProps = {
 
 type MenuProps = {
   items: MenuItemProps[];
+  handleToggle?: VoidFunction;
 };
 
 type sectionPositionType = {
@@ -15,7 +16,7 @@ type sectionPositionType = {
   endPostion: number;
 }
 
-export function Menu({ items }: MenuProps) {
+export function Menu({ items, handleToggle }: MenuProps) {
   const [ scrolled, setScrolled ] = useState('');
 
   useEffect( () => {
@@ -50,7 +51,7 @@ export function Menu({ items }: MenuProps) {
           {items.map((item, index) => {
             return (
               <li key={index}>
-                <a className={(scrolled === '' && item.href === '#home') || (scrolled === item.href) ? "title active" : "title"} href={item.href}>
+                <a className={(scrolled === '' && item.href === '#home') || (scrolled === item.href) ? "title active" : "title"} href={item.href} onClick={handleToggle}>
                   {item.title}
                 </a>
               </li>
