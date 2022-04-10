@@ -42,7 +42,7 @@ export function Menu({ items }: MenuProps) {
           {items.map((item, index) => {
             return (
               <li key={index}>
-                <a className={`title${scrolled === '' && item.href === '#home'?" active":scrolled === item.href && " active"}`} href={item.href}>
+                <a className={(scrolled === '' && item.href === '#home')?"title active":(scrolled === item.href) ? "title active" : "title"} href={item.href}>
                   {item.title}
                 </a>
               </li>
