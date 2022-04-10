@@ -1,5 +1,4 @@
 // import "./Style.scss";
-
 export type MenuItemProps = {
   title: string;
   href: string;
@@ -25,8 +24,6 @@ export function Menu({ items }: MenuProps) {
           })}
         </ul>
       </div>
-      <div className="toggle icon-menu"></div>
-      <div className="toggle icon-close"></div>
     </>
   );
 }
