@@ -23,7 +23,7 @@ export function Menu({ items }: MenuProps) {
             );
           })}
         </ul>
-      </div>
+      </div> 
     </>
   );
 }

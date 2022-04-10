@@ -3,6 +3,7 @@ import { Fade } from "react-awesome-reveal";
 import { Header, HeaderProps } from "./components/Header/Index";
 import { Section, SectionProps } from "./components/Section/Index";
 import { Footer, FooterProps } from "./components/Footer/Index";
+import ScrollButton from "./components/ScrollButton/ScrollButton";
 
 import configs from "./config/configs.json";
 
@@ -24,6 +25,7 @@ function App() {
         })}
       </main>
       <Footer {...footer} />
+      <ScrollButton />
     </>
   );
 }

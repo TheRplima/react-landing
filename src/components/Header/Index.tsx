@@ -24,6 +24,6 @@ export function Header({ logo, menuItems }: HeaderProps) {
         <div className="toggle icon-menu"><Icon icon="menu" onClick={handleToggle} size={"1.5rem"}/></div>
         <div className="toggle icon-close"><Icon icon="close" onClick={handleToggle} size={"1.5rem"}/></div>
       </nav>
-    </header>
+    </header> 
   );
 }
